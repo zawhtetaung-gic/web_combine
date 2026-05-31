@@ -1,0 +1,18 @@
+header {
+  /* padding: 10px; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  background: #1e293b;
+  font-size: 22px;
+  font-weight: bold;
+  color: #38bdf8;
+}
+
+header img {
+  width: 48px;
+  height: 48px;
+  border-radius: 50%;
+  object-fit: cover;
+}

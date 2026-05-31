@@ -4,18 +4,29 @@ const projects = require("./config");
 
 (async () => {
   for (const project of projects) {
-    const port = await detect(project.port);
+    for (const service of project.services) {
+      const port = await detect(service.port);
 
-    let command = project.command;
+      let command = service.command;
 
-    if (command.includes("--port")) {
-      command = command.replace("--port", `--port=${port}`);
+      if (!command) {
+        console.log(
+          `⚠️ Missing command for ${service.type} in ${project.name}`,
+        );
+        continue;
+      }
+
+      if (command.includes("--port")) {
+        command = command.replace("--port", `--port=${port}`);
+      }
+
+      console.log(
+        `🚀 Starting ${project.name} - ${service.type} on port ${port}`,
+      );
+
+      exec(command, {
+        cwd: service.path,
+      });
     }
-
-    console.log(`🚀 Starting ${project.name} on port ${port}`);
-
-    exec(command, {
-      cwd: project.path,
-    });
   }
 })();

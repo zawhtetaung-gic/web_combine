@@ -5,6 +5,8 @@
   "main": "run.js",
   "scripts": {
     "start": "node run.js",
+    "hub": "node hub/server.js",
+    "dev": "node run.js",
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "keywords": [],
@@ -14,6 +16,7 @@
   "dependencies": {
     "concurrently": "^9.2.1",
     "detect-port": "^2.1.0",
+    "express": "^5.2.1",
     "open": "^11.0.0"
   }
 }
