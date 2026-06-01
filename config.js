@@ -46,4 +46,26 @@ module.exports = [
       },
     ],
   },
+  {
+    name: "Sakura grammar",
+    services: [
+      {
+        type: "backend",
+        path: "D:/Sakura-Grammar-System-main/Sakura-Grammar-System-main",
+        command: "php artisan serve --port",
+        port: 8003,
+      },
+    ],
+  },
+  {
+    name: "Manga Tai",
+    services: [
+      {
+        type: "backend",
+        path: "D:/MangaTai2-main/MangaTai2-main",
+        command: "php artisan serve --port",
+        port: 8004,
+      },
+    ],
+  },
 ];
